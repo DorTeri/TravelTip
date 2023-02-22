@@ -2,6 +2,7 @@ export const locService = {
     getLocs
 }
 
+import { storageService } from './async-storage.service.js'
 
 const locs = [
     { name: 'Greatplace', lat: 32.047104, lng: 34.832384 }, 

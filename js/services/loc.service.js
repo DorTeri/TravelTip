@@ -7,6 +7,7 @@ export const locService = {
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`
 const STORAGE_KEY = 'locations'
 _createLocs()
 
@@ -24,7 +25,6 @@ function removeLoc(id) {
 
 
 function save(loc) {
-    // console.log('loc', loc)
     if (loc.id) {
         return storageService.put(STORAGE_KEY, loc)
     } else {
@@ -56,6 +56,6 @@ function _createLoc(name) {
     const loc = {}
     loc.id = utilService.makeId()
     loc.name = name || utilService.randomPetName(pet.type)
-    loc.createdAt = Date.now()
+    loc.createdAt = utilService.getDate(Date.now())
     return loc
 }

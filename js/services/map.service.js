@@ -3,8 +3,10 @@ export const mapService = {
     addMarker,
     panTo,
     codeAddress,
-    codeLatLng
+    codeLatLng,
+    getClickedLoc
 }
+
 
 // Var that is used throughout this Module (not global)
 var gMap
@@ -18,10 +20,13 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 center: { lat, lng },
                 zoom: 15
             })
-            gMap.addListener("click", (ev) => {
-                codeLatLng(JSON.stringify(ev.latLng))
-            })
+            gMap.addListener("click", onMapClick)
         })
+}
+
+function getClickedLoc(ev) {
+    return codeLatLng(JSON.parse(JSON.stringify(ev.latLng)))
+        .then(name => ({ name, latLng: JSON.parse(JSON.stringify(ev.latLng)) }))
 }
 
 function codeAddress(address) {
@@ -45,7 +50,7 @@ function codeLatLng(latlng) {
         geocoder
             .geocode({ location: latlng })
             .then((response) => {
-                const address =  response.results[1].formatted_address
+                const address = response.results[1].formatted_address
                 resolve(address)
             })
     })

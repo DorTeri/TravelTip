@@ -9,6 +9,7 @@ window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 window.onRemoveLoc = onRemoveLoc
 window.onCodeAddress = onCodeAddress
+window.onMapClick = onMapClick
 
 function onInit() {
     const loc = renderFilterByQueryStringParams()
@@ -25,8 +26,8 @@ function onCodeAddress(ev) {
     ev.preventDefault()
     const address = document.querySelector('input[name="address"]').value
     mapService.codeAddress(address)
-    .then(locService.save)
-    .then(renderLocs)
+        .then(locService.save)
+        .then(renderLocs)
     document.querySelector('input[name="address"]').value = ''
 }
 
@@ -36,6 +37,12 @@ function getPosition() {
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
+}
+
+function onMapClick(ev) {
+    mapService.getClickedLoc(ev)
+        .then(locService.save)
+        .then(renderLocs)
 }
 
 function onAddMarker() {
@@ -53,10 +60,10 @@ function onGetUserPos() {
         .then((pos) => {
             mapService.panTo(pos.coords.latitude, pos.coords.longitude)
             mapService.codeLatLng({ lat: pos.coords.latitude, lng: pos.coords.longitude })
-                    .then( address => {
-                        document.querySelector('.user-pos')
-                .innerText = address
-                    })
+                .then(address => {
+                    document.querySelector('.user-pos')
+                        .innerText = address
+                })
         })
         .catch((err) => {
             console.log('err!!!', err)

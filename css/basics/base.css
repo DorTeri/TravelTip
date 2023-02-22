@@ -13,11 +13,11 @@
     background-color: #d4dae8;
   }
   
-  p {
+  /* p {
     grid-column: 2;
     grid-row: 2;
     margin-bottom: 3em;
-  }
+  } */
 
   h1 {
     grid-column: 2;

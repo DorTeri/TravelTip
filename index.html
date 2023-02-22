@@ -11,7 +11,7 @@
 <body class="main-layout">
 
 <!-- Header -->
-    <section class="nav-contant full">
+    <section class=" nav-contant full main-layout">
         <header class="main-header">
           <div class="logo">Travel Tip</div>
           <nav class="main-nav">
@@ -24,18 +24,21 @@
       </section>
 
 <!-- Map & Buttons -->
+<main class="map-btn-layout">
     <section class="btn-container btn-layout">
         <button onclick="onAddMarker()" class="btn btn-add-marker">Add <i class="fa-solid fa-location-dot"></i></button>
         <button onclick="onGetUserPos()" class="btn btn-user-pos">My <i class="fa-solid fa-location-dot"></i></button>
         <button onclick="onGetLocs()" class="btn btn-get-locs">Copy locations</button>
         <button onclick="onPanTo()"class="btn btn-pan">Move me</button>
+        <p>You are at: <span class="user-pos"></span></p>
+        <p class="locations">Locations: 
+            <pre class="locs"></pre>
+        </p>
     </section>
     <div id="map" class="map" style="width: 100%; height: 400px;"></div>
+</main>
 
-    <p>You are at: <span class="user-pos"></span></p>
-    <p class="locations">Locations: 
-        <pre class="locs"></pre>
-    </p>
+
 
 
     <script type="module" src="js/app.controller.js"></script>

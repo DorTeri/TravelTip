@@ -7,7 +7,8 @@
   box-shadow: inset 0 -6px 0 #1e1e1e;
   height: 120px;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  grid-column: 2;
 }
 
 .main-menu {

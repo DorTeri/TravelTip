@@ -30,10 +30,11 @@
 }
 
 .btn-remove {
-  justify-self: end;
-  height: 40%;
+  /* height: 40%; */
   border: none;
+  background-color: inherit;
   transition: .2s;
+  color: white;
 }
 
 .btn-remove:hover {
@@ -48,7 +49,24 @@
   height: fit-content;
   place-self: end;
   cursor: pointer;
+  background-color: inherit;
+  transition: .2s;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
 }
+
+.btn-go .fa-rocket:hover {
+  font-size: 1rem;
+  margin-top: -4em;
+  color: #8e160b;
+}
+
+
+
+
+
+fa-rocket {}
+
 
 .btn-input {
   border: none;
@@ -59,4 +77,8 @@
   background-color: #db4437;
   color: white;
   cursor: pointer;
+}
+
+.fa-solid {
+  color: #db4437;
 }

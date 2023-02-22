@@ -29,16 +29,16 @@
       <input name="address" type="text" placeholder="Enter location">
       <button class="btn-input">Go</button>
     </form>
-    <button onclick="onAddMarker()" class="btn btn-add-marker">Add <i class="fa-solid fa-location-dot"></i></button>
-    <button onclick="onGetUserPos()" class="btn btn-user-pos">My <i class="fa-solid fa-location-dot"></i></button>
-    <button onclick="onGetLocs()" class="btn btn-get-locs">Copy locations</button>
+    <button onclick="onAddMarker()" class="btn btn-add-marker">Mark <i class="fa-solid fa-location-dot"></i></button>
+    <button onclick="onGetUserPos()" class="btn btn-user-pos">My <i class="fa-solid fa-house"></i></button>
+    <button onclick="onGetLocs()" class="btn btn-get-locs">Copy <i class="fa-solid fa-copy"></i></button>
     <p>You are at: <span class="user-pos"></span></p>
   </section>
   
   <!-- Map & Buttons -->
   <main class="map-loc-layout">
     <!-- <button onclick="onPanTo()"class="btn btn-pan">Move me</button> -->
-    <div>
+    <div class="location-layout">
       <h2>Locations 🌐</h2>
       <pre class="locs"></pre>
     </div>

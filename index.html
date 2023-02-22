@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelTip</title>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Travel Tip</title>
 </head>
-<body>
-    <h1>TravelTip Starter</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
+<body class="main-layout">
+
+<!-- Header -->
+    <section class=" nav-contant full">
+        <header class="main-header">
+          <div class="logo">Travel Tip</div>
+          <nav class="main-nav">
+            <ul class="main-menu">
+              <div class="link-div"></div>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </header>
+      </section>
+
+<!-- Map & Buttons -->
+    <section class="btn-container btn-layout">
+        <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
+        <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
+        <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+        <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
+    </section>
+    <div id="map" class="map" style="width: 100%; height: 400px;"></div>
 
     <p>You are at: <span class="user-pos"></span></p>
-    <p>Locations: 
+    <p class="locations">Locations: 
         <pre class="locs"></pre>
     </p>
     

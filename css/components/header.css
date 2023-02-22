@@ -1,0 +1,28 @@
+.nav-contant {
+  background-color: #46c769;
+}
+
+.main-header {
+  display: flex;
+  box-shadow: inset 0 -6px 0 #1e1e1e;
+  height: 120px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+.main-header .main-menu a {
+  padding: 46px 40px;
+  box-shadow: -2px 0 0 rgb(37, 37, 37), 2px 0 0 rgb(37, 37, 37);
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* .main-header .main-menu a:hover {
+    box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px 0  #24bd4d;
+  } */

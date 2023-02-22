@@ -1,0 +1,12 @@
+.btn {
+  border: 2px solid rgb(167, 161, 157);
+  padding: 5px;
+  border-radius: 555px;
+  background-color: inherit;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(167, 161, 157);
+}

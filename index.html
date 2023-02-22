@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/a064c61b9e.js" crossorigin="anonymous"></script>
     <title>Travel Tip</title>
 </head>
 <body class="main-layout">
@@ -23,10 +25,10 @@
 
 <!-- Map & Buttons -->
     <section class="btn-container btn-layout">
-        <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
-        <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
-        <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-        <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
+        <button onclick="onAddMarker()" class="btn btn-add-marker">Add <i class="fa-solid fa-location-dot"></i></button>
+        <button onclick="onGetUserPos()" class="btn btn-user-pos">My <i class="fa-solid fa-location-dot"></i></button>
+        <button onclick="onGetLocs()" class="btn btn-get-locs">Copy locations</button>
+        <button onclick="onPanTo()"class="btn btn-pan">Move me</button>
     </section>
     <div id="map" class="map" style="width: 100%; height: 400px;"></div>
 
@@ -34,8 +36,9 @@
     <p class="locations">Locations: 
         <pre class="locs"></pre>
     </p>
-    
+
 
     <script type="module" src="js/app.controller.js"></script>
 </body>
+
 </html>

@@ -13,6 +13,5 @@
 }
 
 .btn-container {
-    margin-top: 5em;
-    margin-bottom: 5em;
-  }
+  grid-column: 2;
+}

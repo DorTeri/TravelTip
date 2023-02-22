@@ -1,9 +1,9 @@
 export const mapService = {
     initMap,
     addMarker,
-    panTo
+    panTo,
+    codeAddress
 }
-
 
 // Var that is used throughout this Module (not global)
 var gMap
@@ -24,6 +24,22 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
         })
 }
 
+function codeAddress(address) {
+    return new Promise((resolve, reject) => {
+        const geocoder = new google.maps.Geocoder()
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                const loc = JSON.parse(JSON.stringify(results[0].geometry.location))
+                panTo(loc.lat, loc.lng)
+                resolve({latLng: loc , name: address})
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        })
+
+    })
+}
+
 function addMarker(loc) {
     var marker = new google.maps.Marker({
         position: loc,
@@ -37,7 +53,6 @@ function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng)
     gMap.panTo(laLatLng)
 }
-
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()

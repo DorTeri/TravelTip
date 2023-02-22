@@ -1,7 +1,7 @@
 export const locService = {
     getLocs,
     removeLoc,
-    addLoc
+    save
 }
 
 import { utilService } from './util.service.js'
@@ -22,11 +22,9 @@ function removeLoc(id) {
     return storageService.remove(STORAGE_KEY , id)
 }
 
-function addLoc() {
-    storageService.post(STORAGE_KEY , )
-}
 
 function save(loc) {
+    console.log('loc', loc)
     if (loc.id) {
         return storageService.put(STORAGE_KEY, loc)
     } else {

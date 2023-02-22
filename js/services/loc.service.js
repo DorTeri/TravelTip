@@ -24,7 +24,7 @@ function removeLoc(id) {
 
 
 function save(loc) {
-    console.log('loc', loc)
+    // console.log('loc', loc)
     if (loc.id) {
         return storageService.put(STORAGE_KEY, loc)
     } else {

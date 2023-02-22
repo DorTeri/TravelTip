@@ -1,22 +1,21 @@
 .btn {
-    border: 2px solid rgb(167, 161, 157);
-    padding: 15px;
-    background-color: inherit;
-    transition: 0.4s;
-    margin-bottom: 1em;
-    width: 7%;
-    cursor: pointer;
+  border: 2px solid rgb(167, 161, 157);
+  padding: 15px;
+  background-color: inherit;
+  transition: 0.4s;
+  margin-bottom: 1em;
+  width: 7%;
+  cursor: pointer;
 }
 
-
 .btn:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(237, 237, 237);
 }
 
 .btn-container {
   grid-column: 2;
   display: flex;
-  gap:20px;
+  gap: 20px;
   border: 1px solid black;
   background-color: white;
   padding: 10px;
@@ -30,16 +29,10 @@
 }
 
 .btn-remove {
-  justify-self: end;
-  height: 40%;
   border: none;
-  transition: .2s;
-}
-
-.btn-remove:hover {
-  cursor: pointer;
-  color: red;
-  font-size: 1.2rem;
+  background-color: inherit;
+  transition: 0.2s;
+  color: white;
 }
 
 .btn-go {
@@ -48,6 +41,16 @@
   height: fit-content;
   place-self: end;
   cursor: pointer;
+  background-color: inherit;
+  transition: 0.2s;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
+}
+
+.btn-go .fa-rocket:hover {
+  font-size: 1rem;
+  margin-top: -4em;
+  color: #8e160b;
 }
 
 .btn-input {
@@ -59,4 +62,8 @@
   background-color: #db4437;
   color: white;
   cursor: pointer;
+}
+
+.fa-solid {
+  color: #db4437;
 }

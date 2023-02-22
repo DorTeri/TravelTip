@@ -1,0 +1,44 @@
+@media (max-width: 1300px) {
+  .map-loc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    width: 450px;
+    height: 420px;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .location-layout {
+    margin-left: -120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map-loc-layout {
+    margin-left: -120px;
+  }
+
+  .btn {
+    width: min-content;
+  }
+  .btn-input {
+    width: 50px;
+    margin-top: 5px;
+    margin-left: -100px;
+  }
+
+  input {
+    margin-right: 40px;
+  }
+
+  h2 {
+    margin-left: 305px;
+  }
+}

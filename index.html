@@ -14,7 +14,7 @@
   <!-- Header -->
   <section class=" nav-contant full main-layout">
     <header class="main-header">
-      <div class="logo">Travel Tip</div>
+      <div class="logo"><span>T</span><span>r</span><span>a</span><span>v</span><span>e</span><span>l</span><span>T</span><span>i</span><span>p</span></div>
       <nav class="main-nav">
         <ul class="main-menu">
           <div class="link-div"></div>
@@ -27,22 +27,22 @@
   <section class="btn-container btn-layout">
     <form onsubmit="onCodeAddress(event)">
       <input name="address" type="text" placeholder="Enter location">
-      <button>Go</button>
+      <button class="btn-input">Go</button>
     </form>
     <button onclick="onAddMarker()" class="btn btn-add-marker">Add <i class="fa-solid fa-location-dot"></i></button>
     <button onclick="onGetUserPos()" class="btn btn-user-pos">My <i class="fa-solid fa-location-dot"></i></button>
     <button onclick="onGetLocs()" class="btn btn-get-locs">Copy locations</button>
     <p>You are at: <span class="user-pos"></span></p>
   </section>
-
+  
   <!-- Map & Buttons -->
-  <main class="map-btn-layout">
+  <main class="map-loc-layout">
     <!-- <button onclick="onPanTo()"class="btn btn-pan">Move me</button> -->
     <div>
-      <h2>Locations</h2>
+      <h2>Locations 🌐</h2>
       <pre class="locs"></pre>
     </div>
-    <div id="map" class="map" style="width: 100%; height: 400px;"></div>
+    <div id="map" class="map"></div>
   </main>
 
 

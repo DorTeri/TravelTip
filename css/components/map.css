@@ -1,3 +1,7 @@
 .map {
   border: 2px solid black;
+  margin-left: 8em;
+  margin-top: 3em;
+  width: 550px; 
+  height: 520px;
 }

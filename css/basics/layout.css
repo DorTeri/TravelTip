@@ -4,7 +4,7 @@
   grid-template-rows: 3;
 }
 
-.map-btn-layout {
+.map-loc-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;

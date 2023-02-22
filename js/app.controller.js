@@ -24,7 +24,9 @@ function onInit() {
 function onCodeAddress(ev) {
     ev.preventDefault()
     const address = document.querySelector('input[name="address"]').value
-    mapService.codeAddress(address).then(locService.save).then(renderLocs)
+    mapService.codeAddress(address)
+    .then(locService.save)
+    .then(renderLocs)
     document.querySelector('input[name="address"]').value = ''
 }
 

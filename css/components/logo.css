@@ -1,4 +1,28 @@
 .logo {
   font-size: clamp(1.5rem, 3vw, 3.2rem);
   cursor: pointer;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: rgb(250, 250, 250);
+}
+
+.logo > span:nth-child(1) {
+  color:#4285F4;
+}
+.logo > span:nth-child(2n) {
+  color:#DB4437;
+}
+.logo > span:nth-child(3n) {
+  color:#F4B400;
+}
+.logo > span:nth-child(4n) {
+  color:#0F9D58;
+}
+
+.logo > span:nth-child(5) {
+  color:#4285F4;
+}
+
+.logo > span:nth-child(7) {
+  color:#DB4437;
 }

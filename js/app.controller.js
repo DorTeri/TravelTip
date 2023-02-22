@@ -1,13 +1,10 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
 
-<<<<<<< HEAD
 export const controller = {
     renderWeather
 }
 
-=======
->>>>>>> 345becd3142ece39f2e37ac6923062e4bd5aecc4
 window.onload = onInit
 window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo
@@ -37,16 +34,9 @@ function onCodeAddress(ev) {
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
-<<<<<<< HEAD
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
-=======
-  console.log('Getting Pos')
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject)
-  })
->>>>>>> 345becd3142ece39f2e37ac6923062e4bd5aecc4
 }
 
 function onMapClick(ev) {

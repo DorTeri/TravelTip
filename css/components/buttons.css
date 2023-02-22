@@ -4,9 +4,15 @@
   border-radius: 555px;
   background-color: inherit;
   transition: 0.4s;
+  margin-bottom: 1em;
 }
 
 .btn:hover {
   cursor: pointer;
   background-color: rgb(167, 161, 157);
 }
+
+.btn-container {
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }

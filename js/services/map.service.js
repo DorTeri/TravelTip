@@ -4,8 +4,12 @@ export const mapService = {
     panTo,
     codeAddress,
     codeLatLng,
-    getClickedLoc
+    getClickedLoc,
+    showWeather
 }
+import { controller } from '../app.controller.js'
+
+const WEATHER_API = `c553c87c076df1b5be71cc6dd3e37fed`
 
 
 // Var that is used throughout this Module (not global)
@@ -36,6 +40,7 @@ function codeAddress(address) {
             if (status == 'OK') {
                 const loc = JSON.parse(JSON.stringify(results[0].geometry.location))
                 panTo(loc.lat, loc.lng)
+                showWeather(loc.lat, loc.lng)
                 resolve({ latLng: loc, name: address })
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
@@ -51,6 +56,8 @@ function codeLatLng(latlng) {
             .geocode({ location: latlng })
             .then((response) => {
                 const address = response.results[1].formatted_address
+                panTo(latlng.lat, latlng.lng)
+                showWeather(latlng.lat, latlng.lng)
                 resolve(address)
             })
     })
@@ -68,6 +75,8 @@ function addMarker(loc) {
 function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng)
     gMap.panTo(laLatLng)
+    showWeather(lat, lng)
+        .then(controller.renderWeather)
 }
 
 function _connectGoogleApi() {
@@ -83,3 +92,18 @@ function _connectGoogleApi() {
         elGoogleApi.onerror = () => reject('Google script failed to load')
     })
 }
+
+function showWeather(lat, lng) {
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${WEATHER_API}`
+    return fetch(weatherUrl).then(res => res.json()).then(res => {
+        const weatherDesc = res.weather[0].description
+        const temp = temperatureConverter(res.main.temp)
+        const name = res.name
+        return { weatherDesc, temp, name }
+    })
+}
+
+function temperatureConverter(valNum) {
+    valNum = parseFloat(valNum);
+    return valNum-273.15;
+  }

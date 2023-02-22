@@ -1,6 +1,9 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
 
+export const controller = {
+    renderWeather
+}
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
@@ -33,7 +36,6 @@ function onCodeAddress(ev) {
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
-    console.log('Getting Pos')
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
@@ -113,4 +115,12 @@ function renderFilterByQueryStringParams() {
         lng: queryStringParams.get('lng') || 34.8676452,
     }
     return loc
+}
+
+function renderWeather(weather) {
+    const elWeather = document.querySelector('.weather')
+    const strHTML = `<div><h3>${weather.name}</h3><p>${weather.weatherDesc}</p>
+    <p>Temp: ${weather.temp}</div>`
+    console.log('strHTML', strHTML)
+    elWeather.innerHTML = strHTML
 }

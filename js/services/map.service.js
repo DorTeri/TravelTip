@@ -19,13 +19,13 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 zoom: 15
             })
             gMap.addListener("click", (ev) => {
-                console.log(JSON.stringify(ev.latLng))
+                codeLatLng(JSON.stringify(ev.latLng))
             })
         })
 }
 
 function codeAddress(address) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const geocoder = new google.maps.Geocoder()
         geocoder.geocode({ 'address': address }, function (results, status) {
             if (status == 'OK') {
@@ -36,7 +36,6 @@ function codeAddress(address) {
                 alert('Geocode was not successful for the following reason: ' + status);
             }
         })
-
     })
 }
 
@@ -62,8 +61,6 @@ function addMarker(loc) {
 }
 
 function panTo(lat, lng) {
-    console.log(lat)
-    console.log(lng)
     var laLatLng = new google.maps.LatLng(lat, lng)
     gMap.panTo(laLatLng)
 }

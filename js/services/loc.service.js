@@ -11,9 +11,9 @@ const STORAGE_KEY = 'locations'
 _createLocs()
 
 function getLocs() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(locs)
+            resolve(storageService.query(STORAGE_KEY))
         }, 2000)
     })
 }
